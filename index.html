@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSEB Form Filling</title>
+    <style>
+        * {
+            margin: 0;
+            /* No margins */
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .form-filling {
+            display: flex;
+            justify-content: center;
+            background-color: antiquewhite;
+        }
+
+        .template {
+            width: 595.44pt;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 841.68pt;
+            background-color: #fff;
+        }
+
+        .main-box {
+            width: 575.44pt;
+            height: 821.68pt;
+            border: 0.25px solid black;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+        }
+
+        header div:nth-child(2) {
+            padding-top: 16px;
+            text-align: center;
+        }
+
+        .body {
+            padding-top: 8px;
+            padding-left: 16px;
+        }
+
+        div.box {
+            height: 20px;
+            width: 20px;
+            border: 1px dotted black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-filling">
+        <div class="template">
+            <div class="main-box">
+                <header>
+                    <div></div>
+                    <div>
+                        <p><strong>BIHAR SCHOOL EXAMINATION BOARD</strong></p>
+                        <p>Online Registration Form</p>
+                        <p>Session 2024-2025</p>
+                    </div>
+                </header>
+                <div class="body">
+
+                    <ul class="instruction">
+                        <p>1. प्रत्येक अक्षर को दिए गए खाली बॉक्स में अलग-अलग लिखें और अक्षर बॉक्स के बाहर नहीं होना
+                            चाहिए।</p>
+                        <p>2 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, voluptate dignissimos
+                            animi et totam vitae.</p>
+                    </ul>
+                    <p>Candidate Name</p>
+                    <div class="name"></div>
+                    <p>Father's Name</p>
+                    <div class="father"></div>
+                    <p>Mother's Name</p>
+                    <div class="mother"></div>
+                    <div style="display: flex;justify-content: space-between;">
+                        <div>
+                            <p>Date Of Birth (DDMMYY)</p>
+                            <div class="dob"></div>
+                        </div>
+                        <div>
+                            <p>Phone Number</p>
+                            <div class="phone"></div>
+                        </div>
+                        <div>
+                            <p>Gender</p>
+                            <div class="gender" style="display: flex;"></div>
+                        </div>
+                    </div>
+                    <p>Caste Category</p>
+                    <div class="caste" style="display: flex;"></div>
+                    <p>Religion</p>
+                    <div class="religion" style="display: flex;"></div>
+
+
+                    <div style="display: flex;justify-content: space-between;">
+                        <div>
+                            <p>Area</p>
+                            <div class="area" style="display: flex;"></div>
+                        </div>
+                        <div>
+                            <p>Marital Status</p>
+                            <div class="marital" style="display: flex;"></div>
+                        </div>
+                        <div>
+                            <p>Differently abled</p>
+                            <div class="disable" style="display: flex;"></div>
+                        </div>
+                    </div>
+
+                    <p>Adhaar Number</p>
+                    <div class="adhaar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener('c', box('.name', 32))
+    document.addEventListener('c', box('.father', 32))
+    document.addEventListener('c', box('.mother', 32))
+    document.addEventListener('c', box('.dob', 6))
+    document.addEventListener('c', box('.phone', 10))
+    document.addEventListener('c', select('.gender', 'MALE'))
+    document.addEventListener('c', select('.gender', 'FEMALE'))
+    document.addEventListener('c', select('.gender', 'TRANS'))
+
+    document.addEventListener('c', select('.caste', 'GENERAL'))
+    document.addEventListener('c', select('.caste', 'EBC'))
+    document.addEventListener('c', select('.caste', 'BC'))
+    document.addEventListener('c', select('.caste', 'SC'))
+    document.addEventListener('c', select('.caste', 'ST'))
+
+    document.addEventListener('c', select('.religion', 'Hindu'))
+    document.addEventListener('c', select('.religion', 'Muslim'))
+    document.addEventListener('c', select('.religion', 'Sikh'))
+    document.addEventListener('c', select('.religion', 'Christ'))
+    document.addEventListener('c', select('.religion', 'Bodh'))
+    document.addEventListener('c', select('.religion', 'Jain'))
+    document.addEventListener('c', select('.religion', 'Other'))
+
+    document.addEventListener('c', select('.area', 'RURAL'))
+    document.addEventListener('c', select('.area', 'URBAN'))
+
+    document.addEventListener('c', select('.marital', 'Married'))
+    document.addEventListener('c', select('.marital', 'Unmarried'))
+
+    document.addEventListener('c', select('.disable', 'No'))
+    document.addEventListener('c', select('.disable', 'Yes'))
+
+    document.addEventListener('c', box('.adhaar', 16))
+
+    // const box = document.querySelectorAll('.box')
+
+    // function box( containername, count) {
+    //     let container = document.querySelector(containername);
+    //     for (let i = 0; i < count; i++) {
+    //         const divElement = document.createElement('div');
+    //         divElement.classList.add('box');
+    //         container.appendChild(divElement);
+    //     }
+    //     return container;
+    // }
+
+    function box(containername, count) {
+        let container = document.querySelector(containername);
+        for (let i = 0; i < count; i++) {
+            const imgElement = document.createElement('img');
+            imgElement.src = './box.svg';
+            container.appendChild(imgElement);
+        }
+        return container;
+    }
+
+    function select(containername, boxid) {
+    let container = document.querySelector(containername);
+
+    // Create a container div
+    const outerDiv = document.createElement('div');
+    outerDiv.style.display = 'flex';
+    outerDiv.style.alignItems = 'center';
+
+    // Create a <div> element for the box ID
+    const divElement = document.createElement('span');
+    divElement.innerText = boxid;
+    // div.boxElement.style.paddingRight = 
+
+    // Create an <img> element
+    const imgElement = document.createElement('img');
+    imgElement.style.marginLeft = '6px'
+    imgElement.style.marginRight = '22px'
+    imgElement.src = './box.svg';
+
+    // Append the <div> and <img> elements to the container div
+    outerDiv.appendChild(divElement);
+    outerDiv.appendChild(imgElement);
+
+    // Append the container div to the specified container
+    container.appendChild(outerDiv);
+
+    return container;
+}
+
+</script>
+
+<script>
+    const boxElements = document.querySelectorAll('.box');
+    boxElements.forEach(boxElement => {
+        boxElement.parentNode.style.display = 'flex';
+        boxElement.parentNode.style.paddingTop = '8px';
+        boxElement.parentNode.style.paddingLeft = '8px';
+    });
+</script>
+
+</html>
