@@ -1,165 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BSEB Form Filling</title>
     <style>
-        * {
-            margin: 0;
-            /* No margins */
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        /* No margins */
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        .form-filling {
-            display: flex;
-            justify-content: center;
-            background-color: antiquewhite;
-        }
+      .form-filling {
+        display: flex;
+        justify-content: center;
+        background-color: antiquewhite;
+      }
 
-        .template {
-            width: 595.44pt;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 841.68pt;
-            background-color: #fff;
-        }
+      .template {
+        position: relative;
+        width: 595.44pt;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 841.68pt;
+        background-color: #fff;
+      }
 
-        .main-box {
-            width: 575.44pt;
-            height: 821.68pt;
-            border: 0.25px solid black;
-        }
+      .main-box {
+        width: 575.44pt;
+        height: 821.68pt;
+        border: 0.25px solid black;
+      }
 
-        header {
-            display: flex;
-            justify-content: center;
-        }
+      header {
+        display: flex;
+        justify-content: center;
+      }
 
-        header div:nth-child(2) {
-            padding-top: 16px;
-            text-align: center;
-        }
+      header div:nth-child(2) {
+        padding-top: 16px;
+        text-align: center;
+      }
 
-        .body {
-            padding-top: 8px;
-            padding-left: 16px;
-        }
+      .body {
+        padding-left: 16px;
+      }
 
-        div.box {
-            height: 20px;
-            width: 20px;
-            border: 1px dotted black;
+      div.box {
+        height: 20px;
+        width: 20px;
+        border: 1px dotted black;
+      }
+
+      .instruction {
+        margin-top: 8px;
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+
+      .document {
+        position: absolute;
+        right: 30px;
+        top: 30px;
+      }
+      .document .photo {
+        margin-top: 8px;
+        border: 1px solid black;
+        height: 156px;
+        width: 128px;
+        position: absolute;
+        right: 0;
+      }
+      .form-details p {
+        /* font-size: 17px; */
+        font-weight: bold;
+      }
+      .form-card.select div {
+        display: flex;
+        margin: 2px 0 2px 0;
+        font-size: 14px;
+      }
+      .normal p {
+        margin-bottom: 4px;
+      }
+      .flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 16px;
+      }
+      .flex-start {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-right: 16px;
+        p {
+          padding-right: 24px;
         }
+      }
+      .signs{
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        padding: 0 28px;
+        display: flex;
+        justify-content: space-between;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="form-filling">
-        <div class="template">
-            <div class="main-box">
-                <header>
-                    <div></div>
-                    <div>
-                        <p><strong>BIHAR SCHOOL EXAMINATION BOARD</strong></p>
-                        <p>Online Registration Form</p>
-                        <p>Session 2024-2025</p>
-                    </div>
-                </header>
-                <div class="body">
-
-                    <ul class="instruction">
-                        <p>1. प्रत्येक अक्षर को दिए गए खाली बॉक्स में अलग-अलग लिखें और अक्षर बॉक्स के बाहर नहीं होना
-                            चाहिए।</p>
-                        <p>2 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, voluptate dignissimos
-                            animi et totam vitae.</p>
-                    </ul>
-                    <p>Candidate Name</p>
-                    <div class="name"></div>
-                    <p>Father's Name</p>
-                    <div class="father"></div>
-                    <p>Mother's Name</p>
-                    <div class="mother"></div>
-                    <div style="display: flex;justify-content: space-between;">
-                        <div>
-                            <p>Date Of Birth (DDMMYY)</p>
-                            <div class="dob"></div>
-                        </div>
-                        <div>
-                            <p>Phone Number</p>
-                            <div class="phone"></div>
-                        </div>
-                        <div>
-                            <p>Gender</p>
-                            <div class="gender" style="display: flex;"></div>
-                        </div>
-                    </div>
-                    <p>Caste Category</p>
-                    <div class="caste" style="display: flex;"></div>
-                    <p>Religion</p>
-                    <div class="religion" style="display: flex;"></div>
-
-
-                    <div style="display: flex;justify-content: space-between;">
-                        <div>
-                            <p>Area</p>
-                            <div class="area" style="display: flex;"></div>
-                        </div>
-                        <div>
-                            <p>Marital Status</p>
-                            <div class="marital" style="display: flex;"></div>
-                        </div>
-                        <div>
-                            <p>Differently abled</p>
-                            <div class="disable" style="display: flex;"></div>
-                        </div>
-                    </div>
-
-                    <p>Adhaar Number</p>
-                    <div class="adhaar"></div>
+      <div class="template">
+        <div class="main-box">
+          <header>
+            <div></div>
+            <div>
+              <p><strong>BIHAR SCHOOL EXAMINATION BOARD</strong></p>
+              <p style="margin-bottom: 4px">[Registration Form 2024-2025]</p>
+              <p>23357 - UHS HIMACHALDIH, HALSI</p>
+            </div>
+          </header>
+          <div class="body">
+            <ul class="instruction">
+              <p>
+                1. प्रत्येक अक्षर को दिए गए खाली बॉक्स में अलग-अलग लिखें और
+                अक्षर बॉक्स के बाहर नहीं होना चाहिए।
+              </p>
+              <p>
+                2 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Aperiam, voluptate
+              </p>
+              <p>
+                3 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Aperiam, voluptate
+              </p>
+              <p>
+                4 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Aperiam, voluptate
+              </p>
+            </ul>
+            <div class="form-details">
+              <div style="display: flex; justify-content: flex-start">
+                <div class="form-card normal">
+                  <p>Adhaar Number (if not then Enrollment form)</p>
+                  <div class="adhaar"></div>
                 </div>
+
+                <div class="form-card select" style="padding-left: 24px">
+                  <p>Category</p>
+                  <div class="category"></div>
+                </div>
+              </div>
+              <div class="form-card normal">
+                <p>Candidate Name</p>
+                <div class="name"></div>
+              </div>
+              <div class="form-card normal">
+                <p>Father's Name</p>
+                <div class="father"></div>
+              </div>
+              <div class="form-card normal">
+                <p>Mother's Name</p>
+                <div class="mother"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <div class="form-card">
+                  <p>
+                    Date Of Birth
+                    <small style="font-weight: normal"> (DDMMYY)</small>
+                  </p>
+                  <div class="dob"></div>
+                </div>
+                <div class="form-card normal">
+                  <p>Phone Number</p>
+                  <div class="phone"></div>
+                </div>
+                <div class="form-card select">
+                  <p>Gender</p>
+                  <div class="gender" style="display: flex"></div>
+                </div>
+              </div>
+              <div class="form-card select flex-start">
+                <p>Caste Category</p>
+                <div class="caste" style="display: flex"></div>
+              </div>
+              <div class="form-card select flex-start">
+                <p>Religion</p>
+                <div class="religion" style="display: flex"></div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between">
+                <div class="form-card select">
+                  <p>Area</p>
+                  <div class="area" style="display: flex"></div>
+                </div>
+                <div class="form-card select">
+                  <p>Marital Status</p>
+                  <div class="marital" style="display: flex"></div>
+                </div>
+              </div>
+              
+              <div style="display: flex; justify-content: flex-start">
+              <div class="form-card select flex-start">
+                <p>Differently abled</p>
+                <div class="disable" style="display: flex"></div>
+              </div>
+              <div class="form-card normal flex-start">
+                <p>Specify, If Yes</p>
+                <div class="ifyes"></div>
+              </div>
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <div class="form-card normal">
+                  <p>Email</p>
+                  <div class="email"></div>
+                </div>
+                <div class="form-card normal" style="padding-right: 16px">
+                  <p>Pincode</p>
+                  <div class="pincode"></div>
+                </div>
+              </div>
+              <div class="form-card normal">
+                <p>Address</p>
+                <div class="address"></div>
+              </div>
+              <!-- <div class="form-card normal">
+                <p>Bank Account Holder Name</p>
+                <div class="accountholder"></div>
+              </div> -->
+              <div style="display: flex; justify-content: space-between">
+                <div class="form-card normal">
+                  <p>Bank Account No</p>
+                  <div class="bankaccount"></div>
+                </div>
+                <div class="form-card normal" style="padding-right: 16px">
+                  <p>IFSC Code</p>
+                  <div class="ifsc"></div>
+                </div>
+              </div>
+              <div class="form-card normal">
+                <p>Identification</p>
+                <div class="flex">
+                  <p>Mark 1</p>
+                  <div class="identificationmarks1"></div>
+                </div>
+                <div class="flex">
+                  <p>Mark 2</p>
+                  <div class="identificationmarks2"></div>
+                </div>
+              </div>
+              <div class="form-card select">
+                <br />
+                <p>Subject Offered</p>
+                <div class="flex-start">
+                  <p>1.)M.I.L.</p>
+                  <div class="mil" style="display: flex"></div>
+                </div>
+                <div class="flex-start">
+                  <p>2.)S.I.L.</p>
+                  <div class="sil"></div>
+                </div>
+                <div class="flex-start">
+                  <p>3.)Compulsory.</p>
+                  <div class="compulsory"></div>
+                </div>
+                <div class="flex-start">
+                  <p>&nbsp;&nbsp;&nbsp;&nbsp;Visually Impared</p>
+                  <div class="impared"></div>
+                </div>
+                <div class="flex-start">
+                  <p>4.)Optional</p>
+                  <div
+                    class="optional"
+                    style="display: flex; flex-wrap: wrap"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="document">
+            <div class="school-info">
+              Booklet Code
+              <div
+                class="barcode"
+                style="border: 1px solid black; width: 170px; height: 36px"
+              ></div>
+            </div>
+            <div class="photo"><img src="/box.svgc" alt="Photo" /></div>
+          </div>
+        <div class="signs">
+            <div class="hindi-sign">
+              <div
+                class="sign-box"
+                style="border: 1px solid black; width: 170px; height: 54px"
+              ></div>
+              Signature (Hindi)
+            </div>
+            <div class="english-sign">
+              <div
+                class="sign-box"
+                style="border: 1px solid black; width: 170px; height: 54px"
+              ></div>
+              Signature (English)
+            </div>
+            <div class="parent-sign">
+              <div
+                class="sign-box"
+                style="border: 1px solid black; width: 170px; height: 54px"
+              ></div>
+              Signature (Parent)
             </div>
         </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 
-<script>
-    document.addEventListener('c', box('.name', 32))
-    document.addEventListener('c', box('.father', 32))
-    document.addEventListener('c', box('.mother', 32))
-    document.addEventListener('c', box('.dob', 6))
-    document.addEventListener('c', box('.phone', 10))
-    document.addEventListener('c', select('.gender', 'MALE'))
-    document.addEventListener('c', select('.gender', 'FEMALE'))
-    document.addEventListener('c', select('.gender', 'TRANS'))
+  <script>
+    document.addEventListener("c", box(".name", 32));
 
-    document.addEventListener('c', select('.caste', 'GENERAL'))
-    document.addEventListener('c', select('.caste', 'EBC'))
-    document.addEventListener('c', select('.caste', 'BC'))
-    document.addEventListener('c', select('.caste', 'SC'))
-    document.addEventListener('c', select('.caste', 'ST'))
+    document.addEventListener("c", select(".category", "REGULAR"));
+    document.addEventListener("c", select(".category", "PRIVATE"));
 
-    document.addEventListener('c', select('.religion', 'Hindu'))
-    document.addEventListener('c', select('.religion', 'Muslim'))
-    document.addEventListener('c', select('.religion', 'Sikh'))
-    document.addEventListener('c', select('.religion', 'Christ'))
-    document.addEventListener('c', select('.religion', 'Bodh'))
-    document.addEventListener('c', select('.religion', 'Jain'))
-    document.addEventListener('c', select('.religion', 'Other'))
+    document.addEventListener("c", box(".father", 32));
+    document.addEventListener("c", box(".mother", 32));
+    document.addEventListener("c", box(".dob", 6));
+    document.addEventListener("c", box(".phone", 10));
+    document.addEventListener("c", select(".gender", "MALE"));
+    document.addEventListener("c", select(".gender", "FEMALE"));
+    document.addEventListener("c", select(".gender", "TRANS"));
 
-    document.addEventListener('c', select('.area', 'RURAL'))
-    document.addEventListener('c', select('.area', 'URBAN'))
+    document.addEventListener("c", select(".caste", "GENERAL"));
+    document.addEventListener("c", select(".caste", "EBC"));
+    document.addEventListener("c", select(".caste", "BC"));
+    document.addEventListener("c", select(".caste", "SC"));
+    document.addEventListener("c", select(".caste", "ST"));
 
-    document.addEventListener('c', select('.marital', 'Married'))
-    document.addEventListener('c', select('.marital', 'Unmarried'))
+    document.addEventListener("c", select(".religion", "Hindu"));
+    document.addEventListener("c", select(".religion", "Muslim"));
+    document.addEventListener("c", select(".religion", "Sikh"));
+    document.addEventListener("c", select(".religion", "Christ"));
+    document.addEventListener("c", select(".religion", "Bodh"));
+    document.addEventListener("c", select(".religion", "Jain"));
+    document.addEventListener("c", select(".religion", "Other"));
 
-    document.addEventListener('c', select('.disable', 'No'))
-    document.addEventListener('c', select('.disable', 'Yes'))
+    document.addEventListener("c", select(".area", "RURAL"));
+    document.addEventListener("c", select(".area", "URBAN"));
 
-    document.addEventListener('c', box('.adhaar', 16))
+    document.addEventListener("c", select(".marital", "Married"));
+    document.addEventListener("c", select(".marital", "Unmarried"));
+
+    document.addEventListener("c", select(".disable", "No"));
+    document.addEventListener("c", select(".disable", "Yes"));
+    document.addEventListener("c", box(".ifyes", 14));
+
+    document.addEventListener("c", box(".adhaar", 16));
+    document.addEventListener("c", box(".email", 25));
+    document.addEventListener("c", box(".pincode", 6));
+    document.addEventListener("c", box(".address", 32));
+
+    document.addEventListener("c", box(".bankaccount", 16));
+    document.addEventListener("c", box(".ifsc", 11));
+    
+
+    document.addEventListener("c", box(".identificationmarks1", 29));
+    document.addEventListener("c", box(".identificationmarks2", 29));
+
+    document.addEventListener("c", select(".mil", "Hindi"));
+    document.addEventListener("c", select(".mil", "Urdu"));
+    document.addEventListener("c", select(".mil", "Bangla"));
+    document.addEventListener("c", select(".mil", "Maithili"));
+
+    document.addEventListener("c", select(".sil", "Sanskrit"));
+    document.addEventListener("c", select(".sil", "Hindi(NLH)"));
+    document.addEventListener("c", select(".sil", "Arabic"));
+    document.addEventListener("c", select(".sil", "Persian"));
+    document.addEventListener("c", select(".sil", "Bhojpuri"));
+
+    document.addEventListener("c", select(".compulsory", "Math"));
+    document.addEventListener("c", select(".compulsory", "Science"));
+    document.addEventListener("c", select(".compulsory", "Soc. Science"));
+    document.addEventListener("c", select(".compulsory", "English"));
+
+    document.addEventListener(
+      "c",
+      select(".impared", "Home Science (In lieu of Mathematics)")
+    );
+    document.addEventListener(
+      "c",
+      select(".impared", "Music (In lieu of Science)")
+    );
+
+    document.addEventListener("c", select(".optional", "Adv. Math"));
+    document.addEventListener("c", select(".optional", "Arabic"));
+    document.addEventListener("c", select(".optional", "Commerce"));
+    document.addEventListener("c", select(".optional", "Dance"));
+    document.addEventListener("c", select(".optional", "Economics"));
+    document.addEventListener("c", select(".optional", "Fine Arts"));
+    document.addEventListener("c", select(".optional", "Home Sci."));
+    document.addEventListener("c", select(".optional", "Maithili."));
+    document.addEventListener("c", select(".optional", "Home Sci."));
+    document.addEventListener("c", select(".optional", "Music"));
+    document.addEventListener("c", select(".optional", "Persian"));
+    document.addEventListener("c", select(".optional", "Sanskrit"));
+
+    // document.addEventListener("c", box(".accountholder", 32));
 
     // const box = document.querySelectorAll('.box')
 
@@ -174,53 +424,51 @@
     // }
 
     function box(containername, count) {
-        let container = document.querySelector(containername);
-        for (let i = 0; i < count; i++) {
-            const imgElement = document.createElement('img');
-            imgElement.src = './box.svg';
-            container.appendChild(imgElement);
-        }
-        return container;
+      let container = document.querySelector(containername);
+      for (let i = 0; i < count; i++) {
+        const imgElement = document.createElement("img");
+        imgElement.src = "./box.svg";
+        container.appendChild(imgElement);
+      }
+      return container;
     }
 
     function select(containername, boxid) {
-    let container = document.querySelector(containername);
+      let container = document.querySelector(containername);
 
-    // Create a container div
-    const outerDiv = document.createElement('div');
-    outerDiv.style.display = 'flex';
-    outerDiv.style.alignItems = 'center';
+      // Create a container div
+      const outerDiv = document.createElement("div");
+      outerDiv.style.display = "flex";
+      outerDiv.style.alignItems = "center";
 
-    // Create a <div> element for the box ID
-    const divElement = document.createElement('span');
-    divElement.innerText = boxid;
-    // div.boxElement.style.paddingRight = 
+      // Create a <div> element for the box ID
+      const divElement = document.createElement("span");
+      divElement.innerText = boxid;
+      // div.boxElement.style.paddingRight =
 
-    // Create an <img> element
-    const imgElement = document.createElement('img');
-    imgElement.style.marginLeft = '6px'
-    imgElement.style.marginRight = '22px'
-    imgElement.src = './box.svg';
+      // Create an <img> element
+      const imgElement = document.createElement("img");
+      imgElement.style.marginLeft = "4px";
+      imgElement.style.marginRight = "18px";
+      imgElement.src = "./box.svg";
 
-    // Append the <div> and <img> elements to the container div
-    outerDiv.appendChild(divElement);
-    outerDiv.appendChild(imgElement);
+      // Append the <div> and <img> elements to the container div
+      outerDiv.appendChild(divElement);
+      outerDiv.appendChild(imgElement);
 
-    // Append the container div to the specified container
-    container.appendChild(outerDiv);
+      // Append the container div to the specified container
+      container.appendChild(outerDiv);
 
-    return container;
-}
+      return container;
+    }
+  </script>
 
-</script>
-
-<script>
-    const boxElements = document.querySelectorAll('.box');
-    boxElements.forEach(boxElement => {
-        boxElement.parentNode.style.display = 'flex';
-        boxElement.parentNode.style.paddingTop = '8px';
-        boxElement.parentNode.style.paddingLeft = '8px';
+  <script>
+    const boxElements = document.querySelectorAll(".box");
+    boxElements.forEach((boxElement) => {
+      boxElement.parentNode.style.display = "flex";
+      boxElement.parentNode.style.paddingTop = "8px";
+      boxElement.parentNode.style.paddingLeft = "8px";
     });
-</script>
-
+  </script>
 </html>
