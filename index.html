@@ -1,331 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BSEB Form Filling</title>
     <style>
-      * {
-        margin: 0;
-        /* No margins */
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      .form-filling {
-        display: flex;
-        justify-content: center;
-        background-color: antiquewhite;
-      }
-
-      .template {
-        position: relative;
-        width: 595.44pt;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 841.68pt;
-        background-color: #fff;
-      }
-
-      .main-box {
-        width: 575.44pt;
-        height: 821.68pt;
-        border: 0.25px solid black;
-      }
-
-      header {
-        display: flex;
-        justify-content: center;
-      }
-
-      header div:nth-child(2) {
-        padding-top: 16px;
-        text-align: center;
-      }
-
-      .body {
-        padding-left: 16px;
-      }
-
-      div.box {
-        height: 20px;
-        width: 20px;
-        border: 1px dotted black;
-      }
-
-      .instruction {
-        margin-top: 8px;
-        margin-bottom: 16px;
-        font-size: 14px;
-      }
-
-      .document {
-        position: absolute;
-        right: 30px;
-        top: 30px;
-      }
-      .document .photo {
-        margin-top: 8px;
-        border: 1px solid black;
-        height: 156px;
-        width: 128px;
-        position: absolute;
-        right: 0;
-      }
-      .form-details p {
-        /* font-size: 17px; */
-        font-weight: bold;
-      }
-      .form-card.select div {
-        display: flex;
-        margin: 2px 0 2px 0;
-        font-size: 14px;
-      }
-      .form-card p span{
-        font-weight: normal;
-        font-size: 12px;
-      }
-      .normal p {
-        margin-bottom: 4px;
-      }
-      .flex {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-right: 16px;
-      }
-      .flex-start {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        padding-right: 16px;
-        p {
-          padding-right: 24px;
+        * {
+            margin: 0;
+            /* No margins */
+            padding: 0;
+            box-sizing: border-box;
         }
-      }
-      .signs{
-        position: absolute;
-        bottom: 20px;
-        width: 100%;
-        padding: 0 28px;
-        display: flex;
-        justify-content: space-between;
-      }
+
+        .form-filling {
+            display: flex;
+            justify-content: center;
+            background-color: antiquewhite;
+        }
+
+        .template {
+            position: relative;
+            width: 595.44pt;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 841.68pt;
+            background-color: #fff;
+        }
+
+        .main-box {
+            width: 565.44pt;
+            height: 821.68pt;
+            border: 0.25px solid black;
+            margin-left: 28px;
+            margin-right: 4px;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            padding-right: 64px;
+        }
+
+        header div:nth-child(2) {
+            padding-top: 16px;
+            text-align: center;
+        }
+
+        .body {
+            padding-left: 10px;
+        }
+
+        div.box {
+            height: 20px;
+            width: 20px;
+            border: 1px dotted black;
+        }
+
+        .instruction {
+            margin-top: 8px;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        .document {
+            position: absolute;
+            right: 20px;
+            top: 24px;
+        }
+
+        .document .photo {
+            margin-top: 8px;
+            border: 1px solid black;
+            height: 156px;
+            width: 128px;
+            position: absolute;
+            right: 0;
+        }
+
+        .form-details p {
+            /* font-size: 17px; */
+            font-weight: bold;
+        }
+
+        .form-card.select div {
+            display: flex;
+            margin: 2px 0 2px 0;
+            font-size: 14px;
+        }
+
+        .form-card p span {
+            font-weight: normal;
+            font-size: 12px;
+        }
+
+        .normal p {
+            margin-bottom: 4px;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-right: 16px;
+        }
+
+        .flex-start {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-right: 16px;
+
+            p {
+                padding-right: 24px;
+            }
+        }
+
+        .signs {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            padding: 0 20px 0 40px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .marker {
+            .top-left {
+                position: absolute;
+                top: 18px;
+                left: 37px;
+            }
+
+            .top-right {
+                position: absolute;
+                top: 18px;
+                right: 12px;
+            }
+            .bottom-right {
+                position: absolute;
+                bottom: 18px;
+                right: 12px;
+            }
+            .bottom-left {
+                position: absolute;
+                bottom: 18px;
+                left: 37px;
+            }
+        }
+
+        .ball {
+            height: 12px;
+            width: 12px;
+            border: 1px solid black;
+            background-color: #000;
+            border-radius: 50%;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="form-filling">
-      <div class="template">
-        <div class="main-box">
-          <header>
-            <div></div>
-            <div>
-              <p><strong>BIHAR SCHOOL EXAMINATION BOARD</strong></p>
-              <p style="margin-bottom: 4px">[Registration Form 2024-2025]</p>
-              <p>23357 - UHS HIMACHALDIH, HALSI</p>
-            </div>
-          </header>
-          <div class="body">
-            <ul class="instruction">
-              <p>
-                1. प्रत्येक अक्षर को दिए गए खाली बॉक्स में अलग-अलग लिखें और
-                अक्षर बॉक्स के बाहर नहीं होना चाहिए।
-              </p>
-              <p>
-                2 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Aperiam, voluptate
-              </p>
-              <p>
-                3 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Aperiam, voluptate
-              </p>
-              <p>
-                4 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Aperiam, voluptate
-              </p>
-            </ul>
-            <div class="form-details">
-              <div style="display: flex; justify-content: flex-start">
-                <div class="form-card normal">
-                  <p>Adhaar Number (if not then Enrollment form)</p>
-                  <div class="adhaar"></div>
-                </div>
+        <div class="template">
+            <div class="main-box">
+                <header>
+                    <div></div>
+                    <div>
+                        <p><strong>BIHAR SCHOOL EXAMINATION BOARD</strong></p>
+                        <p style="margin-bottom: 4px">[Registration Form 2024-2025]</p>
+                        <p>23357 - UHS HIMACHALDIH, HALSI</p>
+                    </div>
+                </header>
+                <div class="body">
+                    <ul class="instruction">
+                        <p>
+                            1. प्रत्येक अक्षर को दिए गए खाली बॉक्स में अलग-अलग लिखें और
+                            अक्षर बॉक्स के बाहर नहीं होना चाहिए।
+                        </p>
+                        <p>
+                            2 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Aperiam, voluptate
+                        </p>
+                        <p>
+                            3 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Aperiam, voluptate
+                        </p>
+                        <p>
+                            4 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Aperiam, voluptate
+                        </p>
+                    </ul>
+                    <div class="form-details">
+                        <div style="display: flex; justify-content: flex-start">
+                            <div class="form-card normal">
+                                <p>Adhaar Number (if not then Enrollment form)</p>
+                                <div class="adhaar"></div>
+                            </div>
 
-                <div class="form-card select" style="padding-left: 24px">
-                  <p>Category</p>
-                  <div class="category"></div>
-                </div>
-              </div>
-              <div class="form-card normal">
-                <p>Candidate Name <span> ( उम्मीदवार का नाम )</span></p>
-                <div class="name"></div>
-              </div>
-              <div class="form-card normal">
-                <p>Father's Name <span> ( पिता का नाम )</span></p>
-                <div class="father"></div>
-              </div>
-              <div class="form-card normal">
-                <p>Mother's Name <span> ( माँ का नाम )</span></p>
-                <div class="mother"></div>
-              </div>
-              <div style="display: flex; justify-content: space-between">
-                <div class="form-card">
-                  <p>
-                    Date Of Birth
-                    <small style="font-weight: normal"> (DDMMYY)</small>
-                  </p>
-                  <div class="dob"></div>
-                </div>
-                <div class="form-card normal">
-                  <p>Phone Number <span>( फोन नंबर )</span></p>
-                  <div class="phone"></div>
-                </div>
-                <div class="form-card select">
-                  <p>Gender <span>( लिंग )</span></p>
-                  <div class="gender" style="display: flex"></div>
-                </div>
-              </div>
-              <div class="form-card select flex-start">
-                <p></span> Caste Category<span>( जाति श्रेणी )</p>
-                <div class="caste" style="display: flex"></div>
-              </div>
-              <div class="form-card select flex-start">
-                <p>Religion <span>( धर्म )</span></p>
-                <div class="religion" style="display: flex"></div>
-              </div>
+                            <div class="form-card select" style="padding-left: 24px">
+                                <p>Category</p>
+                                <div class="category"></div>
+                            </div>
+                        </div>
+                        <div class="form-card normal">
+                            <p>Candidate Name <span> ( उम्मीदवार का नाम )</span></p>
+                            <div class="name"></div>
+                        </div>
+                        <div class="form-card normal">
+                            <p>Father's Name <span> ( पिता का नाम )</span></p>
+                            <div class="father"></div>
+                        </div>
+                        <div class="form-card normal">
+                            <p>Mother's Name <span> ( माँ का नाम )</span></p>
+                            <div class="mother"></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between">
+                            <div class="form-card">
+                                <p>
+                                    Date Of Birth
+                                    <small style="font-weight: normal"> (DDMMYYYY)</small>
+                                </p>
+                                <div class="dob"></div>
+                            </div>
+                            <div class="form-card normal">
+                                <p>Phone Number <span>( फोन नंबर )</span></p>
+                                <div class="phone"></div>
+                            </div>
+                            <div class="form-card select">
+                                <p>Gender <span>( लिंग )</span></p>
+                                <div class="gender" style="display: flex"></div>
+                            </div>
+                        </div>
+                        <div class="form-card select flex-start">
+                            <p></span> Caste Category<span>( जाति श्रेणी )</p>
+                            <div class="caste" style="display: flex"></div>
+                        </div>
+                        <div class="form-card select flex-start">
+                            <p>Religion <span>( धर्म )</span></p>
+                            <div class="religion" style="display: flex"></div>
+                        </div>
 
-              <div style="display: flex; justify-content: space-between">
-                <div class="form-card select">
-                  <p>Area <span> ( क्षेत्र )</span></p>
-                  <div class="area" style="display: flex"></div>
-                </div>
-                <div class="form-card select">
-                  <p>Marital Status <span>( वैवाहिक स्थिति )</span></p>
-                  <div class="marital" style="display: flex"></div>
-                </div>
-              </div>
-              
-              <div style="display: flex; justify-content: flex-start">
-              <div class="form-card select flex-start">
-                <p>Differently abled <span> ( विकलांग )</span></p>
-                <div class="disable" style="display: flex"></div>
-              </div>
-              <div class="form-card normal flex-start">
-                <p>Specify, If Yes</p>
-                <div class="ifyes"></div>
-              </div>
-              </div>
-              <div style="display: flex; justify-content: space-between">
-                <div class="form-card normal">
-                  <p>Email <span> ( ईमेल )</span></p>
-                  <div class="email"></div>
-                </div>
-                <div class="form-card normal" style="padding-right: 16px">
-                  <p>Pincode</p>
-                  <div class="pincode"></div>
-                </div>
-              </div>
-              <div class="form-card normal">
-                <p>Address <span>( पता )</span></p>
-                <div class="address"></div>
-              </div>
-              <!-- <div class="form-card normal">
+                        <div style="display: flex; justify-content: space-between">
+                            <div class="form-card select">
+                                <p>Area <span> ( क्षेत्र )</span></p>
+                                <div class="area" style="display: flex"></div>
+                            </div>
+                            <div class="form-card select">
+                                <p>Marital Status <span>( वैवाहिक स्थिति )</span></p>
+                                <div class="marital" style="display: flex"></div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; justify-content: flex-start">
+                            <div class="form-card select flex-start">
+                                <p>Differently abled <span> ( विकलांग )</span></p>
+                                <div class="disable" style="display: flex"></div>
+                            </div>
+                            <div class="form-card normal flex-start">
+                                <p>Specify, If Yes</p>
+                                <div class="ifyes"></div>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between">
+                            <div class="form-card normal">
+                                <p>Email <span> ( ईमेल )</span></p>
+                                <div class="email"></div>
+                            </div>
+                            <div class="form-card normal" style="padding-right: 16px">
+                                <p>Pincode</p>
+                                <div class="pincode"></div>
+                            </div>
+                        </div>
+                        <div class="form-card normal">
+                            <p>Address <span>( पता )</span></p>
+                            <div class="address"></div>
+                        </div>
+                        <!-- <div class="form-card normal">
                 <p>Bank Account Holder Name</p>
                 <div class="accountholder"></div>
               </div> -->
-              <div style="display: flex; justify-content: space-between">
-                <div class="form-card normal">
-                  <p>Bank Account No <span> ( बैंक खाता संख्या )</span></p>
-                  <div class="bankaccount"></div>
+                        <div style="display: flex; justify-content: space-between">
+                            <div class="form-card normal">
+                                <p>Bank Account No <span> ( बैंक खाता संख्या )</span></p>
+                                <div class="bankaccount"></div>
+                            </div>
+                            <div class="form-card normal" style="padding-right: 16px">
+                                <p>IFSC Code</p>
+                                <div class="ifsc"></div>
+                            </div>
+                        </div>
+                        <div class="form-card normal">
+                            <p>Identification <span> ( पहचान के निशान )</span></p>
+                            <div class="flex">
+                                <p>Mark 1</p>
+                                <div class="identificationmarks1"></div>
+                            </div>
+                            <div class="flex">
+                                <p>Mark 2</p>
+                                <div class="identificationmarks2"></div>
+                            </div>
+                        </div>
+                        <div class="form-card select">
+                            <br />
+                            <p>Subject Offered <span>( प्रस्तावित विषय )</span></p>
+                            <div class="flex-start">
+                                <p>1.)M.I.L.</p>
+                                <div class="mil" style="display: flex"></div>
+                            </div>
+                            <div class="flex-start">
+                                <p>2.)S.I.L.</p>
+                                <div class="sil"></div>
+                            </div>
+                            <div class="flex-start">
+                                <p>3.)Compulsory.</p>
+                                <div class="compulsory"></div>
+                            </div>
+                            <div class="flex-start">
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;Visually Impared</p>
+                                <div class="impared"></div>
+                            </div>
+                            <div class="flex-start">
+                                <p>4.)Optional</p>
+                                <div class="optional" style="display: flex; flex-wrap: wrap"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-card normal" style="padding-right: 16px">
-                  <p>IFSC Code</p>
-                  <div class="ifsc"></div>
-                </div>
-              </div>
-              <div class="form-card normal">
-                <p>Identification <span> ( पहचान के निशान )</span></p>
-                <div class="flex">
-                  <p>Mark 1</p>
-                  <div class="identificationmarks1"></div>
-                </div>
-                <div class="flex">
-                  <p>Mark 2</p>
-                  <div class="identificationmarks2"></div>
-                </div>
-              </div>
-              <div class="form-card select">
-                <br />
-                <p>Subject Offered <span>( प्रस्तावित विषय )</span></p>
-                <div class="flex-start">
-                  <p>1.)M.I.L.</p>
-                  <div class="mil" style="display: flex"></div>
-                </div>
-                <div class="flex-start">
-                  <p>2.)S.I.L.</p>
-                  <div class="sil"></div>
-                </div>
-                <div class="flex-start">
-                  <p>3.)Compulsory.</p>
-                  <div class="compulsory"></div>
-                </div>
-                <div class="flex-start">
-                  <p>&nbsp;&nbsp;&nbsp;&nbsp;Visually Impared</p>
-                  <div class="impared"></div>
-                </div>
-                <div class="flex-start">
-                  <p>4.)Optional</p>
-                  <div
-                    class="optional"
-                    style="display: flex; flex-wrap: wrap"
-                  ></div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="document">
-            <div class="school-info">
-              Booklet Code
-              <div
-                class="barcode"
-                style="border: 1px solid black; width: 170px; height: 36px"
-              ></div>
+            <div class="document">
+                <div class="school-info">
+                    <div class="barcode"
+                        style="border: 1px solid black; width: 220px; height: 48px;margin-right: 12px;"></div>
+                </div>
+                <div class="photo" style="background-image: url(/box.svg);"></div>
             </div>
-            <div class="photo" style="background-image: url(/box.svg);"></div>
-          </div>
-        <div class="signs">
-            <div class="hindi-sign">
-              <div
-                class="sign-box"
-                style="border: 1px solid black; width: 170px; height: 54px"
-              ></div>
-              Signature (Hindi)
+            <div class="signs">
+                <div class="hindi-sign">
+                    <div class="sign-box" style="border: 1px solid black; width: 200px; height: 54px"></div>
+                    Signature (Hindi)
+                </div>
+                <div class="english-sign">
+                    <div class="sign-box" style="border: 1px solid black; width: 200px; height: 54px"></div>
+                    Signature (English)
+                </div>
+                <div class="parent-sign">
+                    <div class="sign-box" style="border: 1px solid black; width: 170px; height: 54px"></div>
+                    Signature (Parent)
+                </div>
             </div>
-            <div class="english-sign">
-              <div
-                class="sign-box"
-                style="border: 1px solid black; width: 170px; height: 54px"
-              ></div>
-              Signature (English)
-            </div>
-            <div class="parent-sign">
-              <div
-                class="sign-box"
-                style="border: 1px solid black; width: 170px; height: 54px"
-              ></div>
-              Signature (Parent)
+
+            <div class="marker">
+                <div class="top-left ball"></div>
+                <div class="top-right ball"></div>
+                <div class="bottom-left ball"></div>
+                <div class="bottom-right ball"></div>
             </div>
         </div>
-        </div>
-      </div>
     </div>
-  </body>
+    </div>
+</body>
 
-  <script>
+<script>
     document.addEventListener("c", box(".name", 32));
 
     document.addEventListener("c", select(".category", "REGULAR"));
@@ -333,7 +370,7 @@
 
     document.addEventListener("c", box(".father", 32));
     document.addEventListener("c", box(".mother", 32));
-    document.addEventListener("c", box(".dob", 6));
+    document.addEventListener("c", box(".dob", 8));
     document.addEventListener("c", box(".phone", 10));
     document.addEventListener("c", select(".gender", "MALE"));
     document.addEventListener("c", select(".gender", "FEMALE"));
@@ -361,7 +398,7 @@
 
     document.addEventListener("c", select(".disable", "No"));
     document.addEventListener("c", select(".disable", "Yes"));
-    document.addEventListener("c", box(".ifyes", 12));
+    document.addEventListener("c", box(".ifyes", 11));
 
     document.addEventListener("c", box(".adhaar", 16));
     document.addEventListener("c", box(".email", 25));
@@ -370,7 +407,7 @@
 
     document.addEventListener("c", box(".bankaccount", 16));
     document.addEventListener("c", box(".ifsc", 11));
-    
+
 
     document.addEventListener("c", box(".identificationmarks1", 29));
     document.addEventListener("c", box(".identificationmarks2", 29));
@@ -392,12 +429,12 @@
     document.addEventListener("c", select(".compulsory", "English"));
 
     document.addEventListener(
-      "c",
-      select(".impared", "Home Science (In lieu of Mathematics)")
+        "c",
+        select(".impared", "Home Science (In lieu of Mathematics)")
     );
     document.addEventListener(
-      "c",
-      select(".impared", "Music (In lieu of Science)")
+        "c",
+        select(".impared", "Music (In lieu of Science)")
     );
 
     document.addEventListener("c", select(".optional", "Adv. Math"));
@@ -428,51 +465,52 @@
     // }
 
     function box(containername, count) {
-      let container = document.querySelector(containername);
-      for (let i = 0; i < count; i++) {
-        const imgElement = document.createElement("img");
-        imgElement.src = "./box.svg";
-        container.appendChild(imgElement);
-      }
-      return container;
+        let container = document.querySelector(containername);
+        for (let i = 0; i < count; i++) {
+            const imgElement = document.createElement("img");
+            imgElement.src = "./box.svg";
+            container.appendChild(imgElement);
+        }
+        return container;
     }
 
     function select(containername, boxid) {
-      let container = document.querySelector(containername);
+        let container = document.querySelector(containername);
 
-      // Create a container div
-      const outerDiv = document.createElement("div");
-      outerDiv.style.display = "flex";
-      outerDiv.style.alignItems = "center";
+        // Create a container div
+        const outerDiv = document.createElement("div");
+        outerDiv.style.display = "flex";
+        outerDiv.style.alignItems = "center";
 
-      // Create a <div> element for the box ID
-      const divElement = document.createElement("span");
-      divElement.innerText = boxid;
-      // div.boxElement.style.paddingRight =
+        // Create a <div> element for the box ID
+        const divElement = document.createElement("span");
+        divElement.innerText = boxid;
+        // div.boxElement.style.paddingRight =
 
-      // Create an <img> element
-      const imgElement = document.createElement("img");
-      imgElement.style.marginLeft = "4px";
-      imgElement.style.marginRight = "18px";
-      imgElement.src = "./box.svg";
+        // Create an <img> element
+        const imgElement = document.createElement("img");
+        imgElement.style.marginLeft = "4px";
+        imgElement.style.marginRight = "18px";
+        imgElement.src = "./box.svg";
 
-      // Append the <div> and <img> elements to the container div
-      outerDiv.appendChild(divElement);
-      outerDiv.appendChild(imgElement);
+        // Append the <div> and <img> elements to the container div
+        outerDiv.appendChild(divElement);
+        outerDiv.appendChild(imgElement);
 
-      // Append the container div to the specified container
-      container.appendChild(outerDiv);
+        // Append the container div to the specified container
+        container.appendChild(outerDiv);
 
-      return container;
+        return container;
     }
-  </script>
+</script>
 
-  <script>
+<script>
     const boxElements = document.querySelectorAll(".box");
     boxElements.forEach((boxElement) => {
-      boxElement.parentNode.style.display = "flex";
-      boxElement.parentNode.style.paddingTop = "8px";
-      boxElement.parentNode.style.paddingLeft = "8px";
+        boxElement.parentNode.style.display = "flex";
+        boxElement.parentNode.style.paddingTop = "8px";
+        boxElement.parentNode.style.paddingLeft = "8px";
     });
-  </script>
+</script>
+
 </html>
