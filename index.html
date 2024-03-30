@@ -82,6 +82,10 @@
         margin: 2px 0 2px 0;
         font-size: 14px;
       }
+      .form-card p span{
+        font-weight: normal;
+        font-size: 12px;
+      }
       .normal p {
         margin-bottom: 4px;
       }
@@ -155,15 +159,15 @@
                 </div>
               </div>
               <div class="form-card normal">
-                <p>Candidate Name</p>
+                <p>Candidate Name <span> ( उम्मीदवार का नाम )</span></p>
                 <div class="name"></div>
               </div>
               <div class="form-card normal">
-                <p>Father's Name</p>
+                <p>Father's Name <span> ( पिता का नाम )</span></p>
                 <div class="father"></div>
               </div>
               <div class="form-card normal">
-                <p>Mother's Name</p>
+                <p>Mother's Name <span> ( माँ का नाम )</span></p>
                 <div class="mother"></div>
               </div>
               <div style="display: flex; justify-content: space-between">
@@ -175,37 +179,37 @@
                   <div class="dob"></div>
                 </div>
                 <div class="form-card normal">
-                  <p>Phone Number</p>
+                  <p>Phone Number <span>( फोन नंबर )</span></p>
                   <div class="phone"></div>
                 </div>
                 <div class="form-card select">
-                  <p>Gender</p>
+                  <p>Gender <span>( लिंग )</span></p>
                   <div class="gender" style="display: flex"></div>
                 </div>
               </div>
               <div class="form-card select flex-start">
-                <p>Caste Category</p>
+                <p></span> Caste Category<span>( जाति श्रेणी )</p>
                 <div class="caste" style="display: flex"></div>
               </div>
               <div class="form-card select flex-start">
-                <p>Religion</p>
+                <p>Religion <span>( धर्म )</span></p>
                 <div class="religion" style="display: flex"></div>
               </div>
 
               <div style="display: flex; justify-content: space-between">
                 <div class="form-card select">
-                  <p>Area</p>
+                  <p>Area <span> ( क्षेत्र )</span></p>
                   <div class="area" style="display: flex"></div>
                 </div>
                 <div class="form-card select">
-                  <p>Marital Status</p>
+                  <p>Marital Status <span>( वैवाहिक स्थिति )</span></p>
                   <div class="marital" style="display: flex"></div>
                 </div>
               </div>
               
               <div style="display: flex; justify-content: flex-start">
               <div class="form-card select flex-start">
-                <p>Differently abled</p>
+                <p>Differently abled <span> ( विकलांग )</span></p>
                 <div class="disable" style="display: flex"></div>
               </div>
               <div class="form-card normal flex-start">
@@ -215,7 +219,7 @@
               </div>
               <div style="display: flex; justify-content: space-between">
                 <div class="form-card normal">
-                  <p>Email</p>
+                  <p>Email <span> ( ईमेल )</span></p>
                   <div class="email"></div>
                 </div>
                 <div class="form-card normal" style="padding-right: 16px">
@@ -224,7 +228,7 @@
                 </div>
               </div>
               <div class="form-card normal">
-                <p>Address</p>
+                <p>Address <span>( पता )</span></p>
                 <div class="address"></div>
               </div>
               <!-- <div class="form-card normal">
@@ -233,7 +237,7 @@
               </div> -->
               <div style="display: flex; justify-content: space-between">
                 <div class="form-card normal">
-                  <p>Bank Account No</p>
+                  <p>Bank Account No <span> ( बैंक खाता संख्या )</span></p>
                   <div class="bankaccount"></div>
                 </div>
                 <div class="form-card normal" style="padding-right: 16px">
@@ -242,7 +246,7 @@
                 </div>
               </div>
               <div class="form-card normal">
-                <p>Identification</p>
+                <p>Identification <span> ( पहचान के निशान )</span></p>
                 <div class="flex">
                   <p>Mark 1</p>
                   <div class="identificationmarks1"></div>
@@ -254,7 +258,7 @@
               </div>
               <div class="form-card select">
                 <br />
-                <p>Subject Offered</p>
+                <p>Subject Offered <span>( प्रस्तावित विषय )</span></p>
                 <div class="flex-start">
                   <p>1.)M.I.L.</p>
                   <div class="mil" style="display: flex"></div>
@@ -291,7 +295,7 @@
                 style="border: 1px solid black; width: 170px; height: 36px"
               ></div>
             </div>
-            <div class="photo"><img src="/box.svgc" alt="Photo" /></div>
+            <div class="photo" style="background-image: url(/box.svg);"></div>
           </div>
         <div class="signs">
             <div class="hindi-sign">
@@ -357,7 +361,7 @@
 
     document.addEventListener("c", select(".disable", "No"));
     document.addEventListener("c", select(".disable", "Yes"));
-    document.addEventListener("c", box(".ifyes", 14));
+    document.addEventListener("c", box(".ifyes", 12));
 
     document.addEventListener("c", box(".adhaar", 16));
     document.addEventListener("c", box(".email", 25));
